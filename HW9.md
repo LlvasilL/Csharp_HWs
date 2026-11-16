@@ -1,11 +1,10 @@
 # HW9(15.11)
 # Задача 1
-1. а) Попадут свойства Name и Score, потому что публичные свойства. Поля secretCode и IsAlive не попадут, так как по умолчанию поля не включаются в Json-строку независимо от модификатора доступа.
+а) Попадут свойства Name и Score, потому что публичные свойства. Поля secretCode и IsAlive не попадут, так как по умолчанию поля не включаются в Json-строку независимо от модификатора доступа.
 
 б)В классе перед тем как объявить поле secretCode нужно написать атрибут [JsonInclude]
 
 в)Можно также перед объявлением поля IsAlive написать атрибут  [JsonInclude], а можно переопределить JsonSerializerOptions IncludeFields = true
-
 # Задача 2
 а)
 public class T
@@ -19,14 +18,12 @@ public class T
 
 б)
 Вывелся null потому что по умолчанию JSON  чувствителен к регистру, ключ к нём не соответствует названию свойства, поэтому сериализатор не может его найти и выдаёт null. Чтобы JSON не обращал внимание на регистр ключей можно переопределять JsonSerializerOptions:
-
+```
 JsonSerializerOptions = new()
 {
 	PropertyNameCaseInsensitive = true
 };
-
-
-
+```
 в) Является валидным JSON, её можно десериализировать в тип object[] 
 
 # Задача 3
@@ -38,12 +35,12 @@ JsonSerializerOptions = new()
 
 # Задача 4
 ## Main
+```
 using System;
 using System.Text.Json;
 namespace homework;
 class Program
 {
-
     static void Main(string[] args)
     {
         GameCharacter player = new GameCharacter("Steve", 0, 100, new string[] {"Sword", "Book" , "Bow" });
@@ -61,8 +58,9 @@ class Program
         Console.WriteLine(loadedPlayer.Inventory.Length);
     }   
 }
-
+```
 ## Class GameCharacter
+```
 using System;
 namespace homework
 {
@@ -84,9 +82,10 @@ namespace homework
   }
  }
 }
-
+```
 # Задача 5
 ## Main
+```
 using System;
 using System.Text.Json;
 namespace homework;
@@ -122,9 +121,9 @@ class Program
         Console.WriteLine($"Инвентарь: {string.Join(", ", loadedPlayer.Inventory)}");
     }
 }
-
+```
 ## Class GameCharacter
-
+```
 using System;
 namespace homework
 {
@@ -146,9 +145,10 @@ namespace homework
   }
  }
 }
-
+```
 # Задача 6
 ## Main
+```
 using System;
 using System.Text.Json;
 namespace homework;
@@ -197,8 +197,9 @@ class Program
         }    
     }
 }
-
+```
 ## Class GameSettings
+```
 using System;
 namespace homework
 {
@@ -209,7 +210,7 @@ namespace homework
 		public int MusicVolume { get; set; }
 	}
 }
-
+```
 
 
 
