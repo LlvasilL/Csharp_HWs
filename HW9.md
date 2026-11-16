@@ -6,7 +6,7 @@
 
 в)Можно также перед объявлением поля IsAlive написать атрибут  [JsonInclude], а можно переопределить JsonSerializerOptions IncludeFields = true
 
-#Задача 2
+# Задача 2
 а)
 public class T
     {
@@ -29,15 +29,15 @@ JsonSerializerOptions = new()
 
 в) Является валидным JSON, её можно десериализировать в тип object[] 
 
-#Задача 3
+# Задача 3
 1. File — с небольшими по объёму файлами для простых разовых операций лучше использовать File
 2. File — небольшая разовая операция - лучше использовать File, он автоматизирует частые операции. Не нужно вручную следить за тем, чтобы поток закрылся (как в случае с FileStream)
 3. FileStream — лучше использовать FileStream, потому что это работа с большим файлом и лучше иметь возможность тонкого управлениея чтением и записью. Записывать данные в конце файла можно без перезаписывания предыдущих 
 4. File — лучше использовать File для проверки наличия файла и в том случае, когда файл нужно записать целиком
 5. FileStream — работа с большим файлам, обратиться к середине файла можно Благодаря Seek и Position
 
-#Задача 4
-##Main
+# Задача 4
+## Main
 using System;
 using System.Text.Json;
 namespace homework;
@@ -62,7 +62,7 @@ class Program
     }   
 }
 
-##Class GameCharacter
+## Class GameCharacter
 using System;
 namespace homework
 {
@@ -85,14 +85,13 @@ namespace homework
  }
 }
 
-#Задача 5
-##Main
+# Задача 5
+## Main
 using System;
 using System.Text.Json;
 namespace homework;
 class Program
 {
-
     static void Main(string[] args)
     {
         GameCharacter player = new GameCharacter("Steve", 0, 100, new string[] { "Sword", "Book", "Bow" });
@@ -124,7 +123,8 @@ class Program
     }
 }
 
-##Class GameCharacter
+## Class GameCharacter
+
 using System;
 namespace homework
 {
@@ -147,8 +147,8 @@ namespace homework
  }
 }
 
-#Задача 6
-##Main
+# Задача 6
+## Main
 using System;
 using System.Text.Json;
 namespace homework;
@@ -198,7 +198,7 @@ class Program
     }
 }
 
-##Class GameSettings
+## Class GameSettings
 using System;
 namespace homework
 {
