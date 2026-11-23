@@ -344,7 +344,7 @@ class Program
 
 }
 ```
-## interface IEntity
+## Интерфейсы
 ```
 using System;
 namespace homework
